@@ -107,6 +107,7 @@ public enum LLMTypeRegistry {
         "mellum": create(MellumConfiguration.self, MellumModel.init),
         "bailing_moe": create(BailingMoeConfiguration.self, BailingMoeModel.init),
         "lfm2_moe": create(LFM2MoEConfiguration.self, LFM2MoEModel.init),
+        "lfm3": create(LFM3Configuration.self, LFM3Model.init),
         "nanochat": create(NanoChatConfiguration.self, NanoChatModel.init),
         "nemotron_h": create(NemotronHConfiguration.self, NemotronHModel.init),
         "nemotron_h_puzzle": create(NemotronHConfiguration.self, NemotronHModel.init),
@@ -510,6 +511,11 @@ public class LLMRegistry: AbstractModelRegistry, @unchecked Sendable {
         toolCallFormat: .lfm2
     )
 
+    static public let lfm3_1_7b_4bit_mlx = ModelConfiguration(
+        id: "LiquidAI/LFM3-1.7B-MLX-4bit",
+        defaultPrompt: "Why is the sky blue?"
+    )
+
     static public let nanochat_d20_mlx = ModelConfiguration(
         id: "dnakov/nanochat-d20-mlx",
         defaultPrompt: ""
@@ -598,6 +604,7 @@ public class LLMRegistry: AbstractModelRegistry, @unchecked Sendable {
             olmo_2_1124_7B_Instruct_4bit,
             ling_mini_2_2bit,
             lfm2_8b_a1b_3bit_mlx,
+            lfm3_1_7b_4bit_mlx,
             nanochat_d20_mlx,
             gpt_oss_20b_MXFP4_Q8,
             jamba_3b_4bit,
